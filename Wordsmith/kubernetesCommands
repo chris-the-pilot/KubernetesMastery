@@ -1,0 +1,11 @@
+#Create and expose frontend
+kubectl create deployment web --image=bretfisher/wordsmith-web
+kubectl expose deploy/web --type=NodePort --port 80
+
+#Create and expose backend
+kubectl create deployment words --image=bretfisher/wordsmith-words
+kubectl expose deploy/words --port=8080
+
+#Create and expose db
+kubectl create deployment db --image=bretfisher/wordsmith-db
+kubectl expose deploy/db --port=5432
