@@ -9,3 +9,6 @@ kubectl expose deploy/words --port=8080
 #Create and expose db
 kubectl create deployment db --image=bretfisher/wordsmith-db
 kubectl expose deploy/db --port=5432
+
+#Scale words api
+kubectl scale --replicas=5 deploy/words
